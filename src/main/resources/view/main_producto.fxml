@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pe.edu.upeu.sysventas.control.ProductoController">
+   <children>
+      <VBox alignment="CENTER" spacing="15.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <!-- Encabezado -->
+            <HBox alignment="CENTER" spacing="10.0" style="-fx-background-color: #343a40; -fx-padding: 10;" prefHeight="60.0">
+               <children>
+                  <Label text="Gestión de Productos" style="-fx-font-size: 20px; -fx-text-fill: white; -fx-font-weight: bold;" />
+               </children>
+            </HBox>
+
+            <!-- Filtro -->
+            <HBox alignment="CENTER" spacing="10.0">
+               <children>
+                  <Label text="Buscar:" />
+                  <TextField fx:id="txtFiltrarRegistro" promptText="Buscar productos..." />
+                  <Button fx:id="btnFiltrar" text="Buscar" />
+               </children>
+            </HBox>
+
+            <!-- Contenido principal -->
+            <HBox spacing="20.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <!-- Formulario -->
+                  <VBox spacing="10.0" style="-fx-background-color: #f8f9fa; -fx-padding: 15; -fx-border-color: #ced4da; -fx-border-radius: 5;" prefWidth="350.0">
+                     <children>
+                        <Label text="Formulario de Registro" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+                        <GridPane hgap="10.0" vgap="10.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+                           </columnConstraints>
+                           <children>
+                              <!-- Nombre Producto -->
+                              <Label text="Nombre Producto:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                              <TextField fx:id="txtNombreProducto" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                              <!-- P.Unit -->
+                              <Label text="P.Unit:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                              <TextField fx:id="txtPUnit" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                              <!-- P.Unit.Old -->
+                              <Label text="P.Unit.Old:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                              <TextField fx:id="txtPUnitOld" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                              <!-- Utilidad -->
+                              <Label text="Utilidad:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                              <TextField fx:id="txtUtilidad" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                              <!-- Stock -->
+                              <Label text="Stock:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                              <TextField fx:id="txtStock" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+                              <!-- Stock Old -->
+                              <Label text="Stock Old:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                              <TextField fx:id="txtStockOld" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+                              <!-- Marca -->
+                              <Label text="Marca:" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                              <ComboBox fx:id="cmbMarca" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+
+                              <!-- Categoría -->
+                              <Label text="Categoría:" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+                              <ComboBox fx:id="cmbCategoria" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+
+                              <!-- Unidad Medida -->
+                              <Label text="Unidad Medida:" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+                              <ComboBox fx:id="cmbUnidadMedida" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                           </children>
+                        </GridPane>
+
+                        <!-- Botones -->
+                        <HBox alignment="CENTER" spacing="10.0">
+                           <children>
+                              <Button fx:id="btnGuardar" text="Guardar" style="-fx-background-color: #28a745; -fx-text-fill: white;" />
+                              <Button fx:id="btnCancelar" text="Cancelar" style="-fx-background-color: #dc3545; -fx-text-fill: white;" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+
+                  <!-- Tabla -->
+                  <VBox spacing="10.0" style="-fx-background-color: #ffffff; -fx-padding: 15; -fx-border-color: #ced4da; -fx-border-radius: 5;" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Label text="Lista de Productos" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+                        <TableView fx:id="tableProductos" VBox.vgrow="ALWAYS">
+                           <columns>
+                              <TableColumn fx:id="colNombre" text="Nombre" />
+                              <TableColumn fx:id="colPUnit" text="P.Unit" />
+                              <TableColumn fx:id="colPUnitOld" text="P.Unit.Old" />
+                              <TableColumn fx:id="colUtilidad" text="Utilidad" />
+                              <TableColumn fx:id="colStock" text="Stock" />
+                              <TableColumn fx:id="colStockOld" text="Stock Old" />
+                              <TableColumn fx:id="colMarca" text="Marca" />
+                              <TableColumn fx:id="colCategoria" text="Categoría" />
+                              <TableColumn fx:id="colUnidadMedida" text="Unidad Medida" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
